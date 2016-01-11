@@ -3,15 +3,18 @@ package model.vo;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
 import model.dao.ProdutoDAO;
 
 @NamedQuery(name="Carrinho.findById", query="SELECT c FROM Carrinho AS c WHERE c.email LIKE :email")
@@ -41,7 +44,7 @@ public class Carrinho implements Serializable {
 		this.total = total;
 	}
 
-	@OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.MERGE)
+	@ManyToMany(fetch=FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JoinTable
 	 (
 	      name="CARRINHO_PRODUTO",

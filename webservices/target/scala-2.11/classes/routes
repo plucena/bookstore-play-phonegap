@@ -3,11 +3,14 @@
 # ~~~~
 
 # Home page
-GET     /Book                           controllers.Application.getBooks()
-GET     /Book/:id                       controllers.Application.getBook(id: String)
-DELETE  /Book/:id                       controllers.Application.deleteBook(id: String)
-POST    /Book                           controllers.Application.saveBook()
-GET	    /BookNew						controllers.Application.newBook()
+GET     /Produto/:id                    controllers.ProdutoController.getProduto(id: Long)
+GET     /Produto                        controllers.ProdutoController.getProdutos()
+POST    /Produto					    controllers.ProdutoController.saveProduto()
+
+GET     /Usuario/:email                 controllers.UsuarioController.getUsuario(email: String)
+GET     /Usuario                        controllers.UsuarioController.getUsuarios()
+POST    /Usuario					    controllers.UsuarioController.saveUsuario()
+
 	
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

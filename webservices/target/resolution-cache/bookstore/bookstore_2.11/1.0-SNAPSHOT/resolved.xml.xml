@@ -4,7 +4,7 @@
 		module="bookstore_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20160111120750"
+		publication="20160111162753"
 	>
 		<description>
 		BookStore
@@ -44,5 +44,10 @@
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.google.code.gson" name="gson" rev="2.2.4" conf="compile->default(compile)"/>
+		<dependency org="com.wordnik" name="swagger-play2_2.11" rev="1.3.12" conf="compile->default(compile)">
+			<exclude org="org.reflections" module="reflections" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.reflections" name="reflections" rev="0.9.8" transitive="false" conf="compile->default(compile)"/>
+		<dependency org="org.webjars" name="swagger-ui" rev="2.1.8-M1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

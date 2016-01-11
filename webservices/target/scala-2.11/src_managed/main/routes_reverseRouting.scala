@@ -1,6 +1,6 @@
 // @SOURCE:/Users/percivalslucena/loja/webservices/conf/routes
-// @HASH:337ae5a2dbc2615a5f6943b5b461347f536cd4c4
-// @DATE:Mon Jan 11 12:29:59 BRST 2016
+// @HASH:84628e065021ddb79075c45ff2aa3e214f6c9ccc
+// @DATE:Mon Jan 11 18:50:53 BRST 2016
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -15,19 +15,50 @@ import _root_.play.libs.F
 import Router.queryString
 
 
-// @LINE:13
+// @LINE:16
+// @LINE:12
+// @LINE:11
 // @LINE:10
-// @LINE:9
 // @LINE:8
 // @LINE:7
 // @LINE:6
 package controllers {
 
-// @LINE:13
+// @LINE:8
+// @LINE:7
+// @LINE:6
+class ReverseProdutoController {
+
+
+// @LINE:8
+def saveProduto(): Call = {
+   import ReverseRouteContext.empty
+   Call("POST", _prefix + { _defaultPrefix } + "Produto")
+}
+                        
+
+// @LINE:7
+def getProdutos(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "Produto")
+}
+                        
+
+// @LINE:6
+def getProduto(id:Long): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "Produto/" + implicitly[PathBindable[Long]].unbind("id", id))
+}
+                        
+
+}
+                          
+
+// @LINE:16
 class ReverseAssets {
 
 
-// @LINE:13
+// @LINE:16
 def at(file:String): Call = {
    implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
@@ -37,46 +68,30 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:12
+// @LINE:11
 // @LINE:10
-// @LINE:9
-// @LINE:8
-// @LINE:7
-// @LINE:6
-class ReverseApplication {
+class ReverseUsuarioController {
 
 
-// @LINE:8
-def deleteBook(id:String): Call = {
+// @LINE:12
+def saveUsuario(): Call = {
    import ReverseRouteContext.empty
-   Call("DELETE", _prefix + { _defaultPrefix } + "Book/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)))
-}
-                        
-
-// @LINE:7
-def getBook(id:String): Call = {
-   import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "Book/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)))
-}
-                        
-
-// @LINE:6
-def getBooks(): Call = {
-   import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "Book")
-}
-                        
-
-// @LINE:9
-def saveBook(): Call = {
-   import ReverseRouteContext.empty
-   Call("POST", _prefix + { _defaultPrefix } + "Book")
+   Call("POST", _prefix + { _defaultPrefix } + "Usuario")
 }
                         
 
 // @LINE:10
-def newBook(): Call = {
+def getUsuario(email:String): Call = {
    import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "BookNew")
+   Call("GET", _prefix + { _defaultPrefix } + "Usuario/" + implicitly[PathBindable[String]].unbind("email", dynamicString(email)))
+}
+                        
+
+// @LINE:11
+def getUsuarios(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "Usuario")
 }
                         
 
@@ -86,20 +101,63 @@ def newBook(): Call = {
                   
 
 
-// @LINE:13
+// @LINE:16
+// @LINE:12
+// @LINE:11
 // @LINE:10
-// @LINE:9
 // @LINE:8
 // @LINE:7
 // @LINE:6
 package controllers.javascript {
 import ReverseRouteContext.empty
 
-// @LINE:13
+// @LINE:8
+// @LINE:7
+// @LINE:6
+class ReverseProdutoController {
+
+
+// @LINE:8
+def saveProduto : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ProdutoController.saveProduto",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "Produto"})
+      }
+   """
+)
+                        
+
+// @LINE:7
+def getProdutos : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ProdutoController.getProdutos",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Produto"})
+      }
+   """
+)
+                        
+
+// @LINE:6
+def getProduto : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ProdutoController.getProduto",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Produto/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
+      }
+   """
+)
+                        
+
+}
+              
+
+// @LINE:16
 class ReverseAssets {
 
 
-// @LINE:13
+// @LINE:16
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -113,64 +171,40 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:12
+// @LINE:11
 // @LINE:10
-// @LINE:9
-// @LINE:8
-// @LINE:7
-// @LINE:6
-class ReverseApplication {
+class ReverseUsuarioController {
 
 
-// @LINE:8
-def deleteBook : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.deleteBook",
-   """
-      function(id) {
-      return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "Book/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
-      }
-   """
-)
-                        
-
-// @LINE:7
-def getBook : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.getBook",
-   """
-      function(id) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Book/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
-      }
-   """
-)
-                        
-
-// @LINE:6
-def getBooks : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.getBooks",
+// @LINE:12
+def saveUsuario : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.UsuarioController.saveUsuario",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Book"})
-      }
-   """
-)
-                        
-
-// @LINE:9
-def saveBook : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.saveBook",
-   """
-      function() {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "Book"})
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "Usuario"})
       }
    """
 )
                         
 
 // @LINE:10
-def newBook : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.newBook",
+def getUsuario : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.UsuarioController.getUsuario",
+   """
+      function(email) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Usuario/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email))})
+      }
+   """
+)
+                        
+
+// @LINE:11
+def getUsuarios : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.UsuarioController.getUsuarios",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "BookNew"})
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Usuario"})
       }
    """
 )
@@ -182,20 +216,48 @@ def newBook : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:13
+// @LINE:16
+// @LINE:12
+// @LINE:11
 // @LINE:10
-// @LINE:9
 // @LINE:8
 // @LINE:7
 // @LINE:6
 package controllers.ref {
 
 
-// @LINE:13
+// @LINE:8
+// @LINE:7
+// @LINE:6
+class ReverseProdutoController {
+
+
+// @LINE:8
+def saveProduto(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProdutoController.saveProduto(), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProdutoController", "saveProduto", Seq(), "POST", """""", _prefix + """Produto""")
+)
+                      
+
+// @LINE:7
+def getProdutos(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProdutoController.getProdutos(), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProdutoController", "getProdutos", Seq(), "GET", """""", _prefix + """Produto""")
+)
+                      
+
+// @LINE:6
+def getProduto(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ProdutoController.getProduto(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProdutoController", "getProduto", Seq(classOf[Long]), "GET", """ Home page""", _prefix + """Produto/$id<[^/]+>""")
+)
+                      
+
+}
+                          
+
+// @LINE:16
 class ReverseAssets {
 
 
-// @LINE:13
+// @LINE:16
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -204,41 +266,27 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:12
+// @LINE:11
 // @LINE:10
-// @LINE:9
-// @LINE:8
-// @LINE:7
-// @LINE:6
-class ReverseApplication {
+class ReverseUsuarioController {
 
 
-// @LINE:8
-def deleteBook(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.deleteBook(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "deleteBook", Seq(classOf[String]), "DELETE", """""", _prefix + """Book/$id<[^/]+>""")
-)
-                      
-
-// @LINE:7
-def getBook(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.getBook(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "getBook", Seq(classOf[String]), "GET", """""", _prefix + """Book/$id<[^/]+>""")
-)
-                      
-
-// @LINE:6
-def getBooks(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.getBooks(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "getBooks", Seq(), "GET", """ Home page""", _prefix + """Book""")
-)
-                      
-
-// @LINE:9
-def saveBook(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.saveBook(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "saveBook", Seq(), "POST", """""", _prefix + """Book""")
+// @LINE:12
+def saveUsuario(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.UsuarioController.saveUsuario(), HandlerDef(this.getClass.getClassLoader, "", "controllers.UsuarioController", "saveUsuario", Seq(), "POST", """""", _prefix + """Usuario""")
 )
                       
 
 // @LINE:10
-def newBook(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.newBook(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "newBook", Seq(), "GET", """""", _prefix + """BookNew""")
+def getUsuario(email:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.UsuarioController.getUsuario(email), HandlerDef(this.getClass.getClassLoader, "", "controllers.UsuarioController", "getUsuario", Seq(classOf[String]), "GET", """""", _prefix + """Usuario/$email<[^/]+>""")
+)
+                      
+
+// @LINE:11
+def getUsuarios(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.UsuarioController.getUsuarios(), HandlerDef(this.getClass.getClassLoader, "", "controllers.UsuarioController", "getUsuarios", Seq(), "GET", """""", _prefix + """Usuario""")
 )
                       
 

@@ -3,7 +3,7 @@ package controllers;
 import java.io.IOException;
 
 import play.db.ebean.Model;
-import model.vo.Book;
+import model.vo.*;
 import com.google.gson.*;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;

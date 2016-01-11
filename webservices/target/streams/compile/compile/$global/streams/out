@@ -1,3 +1,4 @@
+[0m[[0mdebug[0m] [0mInvalidating /Users/percivalslucena/loja/webservices/target/scala-2.11/classes/controllers/JsonObjectParser.class: stamp changed from lastModified(1452544589000) to lastModified(1452545486000)[0m
 [0m[[0mdebug[0m] [0m[0m
 [0m[[0mdebug[0m] [0mInitial source changes: [0m
 [0m[[0mdebug[0m] [0m	removed:Set()[0m
@@ -5,11 +6,24 @@
 [0m[[0mdebug[0m] [0m	modified: Set()[0m
 [0m[[0mdebug[0m] [0mRemoved products: Set()[0m
 [0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set()[0m
-[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set(/Users/percivalslucena/loja/webservices/target/scala-2.11/classes/controllers/JsonObjectParser.class)[0m
 [0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set()[0m
 [0m[[0mdebug[0m] [0m[0m
 [0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
 [0m[[0mdebug[0m] [0m	product: Set()[0m
-[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set(/Users/percivalslucena/loja/webservices/app/controllers/ProdutoController.java, /Users/percivalslucena/loja/webservices/app/controllers/UsuarioController.java)[0m
 [0m[[0mdebug[0m] [0m	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/percivalslucena/loja/webservices/app/controllers/ProdutoController.java, /Users/percivalslucena/loja/webservices/app/controllers/UsuarioController.java)[0m
+[0m[[0minfo[0m] [0mCompiling 2 Java sources to /Users/percivalslucena/loja/webservices/target/scala-2.11/classes...[0m
+[0m[[0mdebug[0m] [0mAttempting to call javac directly...[0m
+[0m[[0mdebug[0m] [0mcom.sun.tools.javac.Main not found with appropriate method signature; forking javac instead[0m
+[0m[[0mdebug[0m] [0mForking javac: javac @/var/folders/n7/v68194z16vg0q5m4cb6p64k80000gn/T/sbt_a7dd7f49/argfile[0m
+[0m[[0mdebug[0m] [0mjavac returned exit code: 0[0m
+[0m[[0mdebug[0m] [0mJava compilation took 1.208184751 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.079080959 s[0m
+[0m[[0mdebug[0m] [0mNew invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set()[0m
+[0m[[0mdebug[0m] [0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mAll newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m
