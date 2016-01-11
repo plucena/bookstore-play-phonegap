@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/percivalslucena/lojaapp/lojapp/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="cac02b56f6c096c788995ff19dea711293db51ed">
+        <dex dex="/Users/percivalslucena/lojaapp/lojapp/platforms/android/build/intermediates/pre-dexed/debug/classes-07938485df2053d86fff62423b8d808ba430fcd8.jar" />
+    </item>
+
+</items>
