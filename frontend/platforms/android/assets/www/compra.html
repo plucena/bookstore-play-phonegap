@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><title>Insert title here</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+        <div> 
+        <ul class="nav navbar-nav">  
+        <li><a class="navbar-brand" href="#"> Unasp Store</a></li>
+        <li ><a class="navbar-brand" href="produto.html">Produtos</a></li>
+        <li ><a class="navbar-brand" href="carrinho.html"> Carrinho</a></li>
+        <li class="active"><a class="navbar-brand" href="compras.html"> Meus Pedidos</a></li>
+        </ul>
+        </div>
+   </nav>
+
+
+
+   
+<script src="../js/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="../js/jquery/jquery.dynatable.js" type="text/javascript"></script>
+<link href="../css/jquery.dynatable.css" rel="stylesheet" media="screen">
+<link href="../css/main.css" rel="stylesheet" media="screen">
+<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
+<h2><div id="compraid"></div></h2>
+
+<div>
+<table id="my-table" class="table table-condensed">
+  <thead>
+       <th>Id</th>
+    <th>Nome</th>
+    <th>Descricao</th>
+    <th>Preco</th>
+
+    
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<BR/>
+
+</div>
+
+<script>
+
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+}
+
+compraid = "Compra " + getURLParameter("id");
+$("#compraid").html(compraid);
+
+
+$.ajax({
+  url: '/lojaUnasp/loja/compra/list/compra/	'+getURLParameter("id"),
+  success: function(data){
+  	    
+       
+    $('#my-table').dynatable({
+      dataset: {
+        records: data
+      }
+    });
+  }
+});
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
