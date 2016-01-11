@@ -1,22 +1,22 @@
-package dao;
+package model.dao;
 
 import java.util.LinkedList;
 import java.util.List;
-
-import javax.ejb.Stateless;
+import model.vo.*;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.TypedQuery;
 
-import entity.Carrinho;
-import entity.Compra;
+    
 
-@Stateless
-public class CompraDAO {
+public class CompraDAO extends BaseDAO<Compra> {
 
-	@PersistenceContext(unitName = "livraria")
     private EntityManager entityManager;
+
+    public CompraDAO(){
+        super(Compra.class);
+    }
 
     public void addCompra(Compra buy) throws Exception {
     	try {

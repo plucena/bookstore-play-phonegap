@@ -1,23 +1,22 @@
-package dao;
+package model.dao;
 
 import java.util.List;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
-
-import entity.Carrinho;
-import entity.Compra;
+import model.vo.*;
 
 
-@Stateless
-public class CarrinhoDAO {
 
-	 @PersistenceContext(unitName = "livraria")
+public class CarrinhoDAO extends BaseDAO<Carrinho> {
+
 	 private EntityManager entityManager;
 
-	 
+	  public CarrinhoDAO(){
+	  	  super(Carrinho.class);
+	  }
+
 	   public Carrinho find(String user){
 		   return null;
 	   }

@@ -1,10 +1,8 @@
-package dao;
+package model.dao;
 
 import java.util.LinkedList;
 import java.util.List;
-
-import javax.ejb.Stateful;
-import javax.ejb.Stateless;
+import model.vo.*;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
@@ -14,16 +12,17 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
 
-import entity.Produto;
 
-@Stateful
-public class ProdutoDAO {
 
-	 @PersistenceContext(unitName = "livraria")
+public class ProdutoDAO  extends BaseDAO<Produto>{
+
 	 EntityManager entityManager;
 
 	 public ProdutoDAO(){
+	 	super(Produto.class);
 	 }
+
+	
 	 
 	 public Produto findProduto(Long id) throws Exception {
 	           return entityManager.find(Produto.class, id);

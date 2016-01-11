@@ -1,10 +1,9 @@
-package entity;
+package model.vo;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,7 +34,6 @@ public class Compra implements Serializable {
 	private Date data;
 	private String usaurio;
 	private float total;
-	
 	
 		
 	

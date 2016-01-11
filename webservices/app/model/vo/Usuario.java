@@ -1,4 +1,4 @@
-package entity;
+package model.vo;
 
 import java.io.Serializable;
 

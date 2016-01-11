@@ -1,20 +1,20 @@
-package dao;
+package model.dao;
 
 import java.util.List;
-
-import javax.ejb.Stateless;
+import model.vo.*;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 
-import entity.Produto;
-import entity.Usuario;
 
-@Stateless
-public class UsuarioDAO {
+public class UsuarioDAO extends BaseDAO<Usuario>{
 	
 	@PersistenceContext(unitName = "livraria")
     private EntityManager entityManager;
+
+    public UsuarioDAO(){
+        super(Usuario.class);
+    }
 
     public void addUsuario(Usuario user) throws Exception {
         entityManager.merge(user);

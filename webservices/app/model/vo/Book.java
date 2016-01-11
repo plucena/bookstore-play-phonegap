@@ -15,8 +15,6 @@ public class Book {
 	public String title;
 	public String reader;
 	
-	@ManyToOne
-	public Editora editora;
 	
 	
 	public String getId() {

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<script src="../javascripts/angular/angular.js"></script>
+<script src="../javascripts/controllers/LibraryController.js"></script>
+
+<body ng-app="m4mApp">
+
+<h1>Library</h1>
+
+<div ng-controller="LibraryController">
+ 
+ <table border="1">
+    <tr> 
+	<th> id </th>
+	<th> author </th>
+	<th> collection </th>
+	<th> other </th>
+	<th> title </th>
+	<th> reader </th>
+	</tr>
+	
+	<tr ng-repeat="b in books">
+	<td> {{b.id}}</td>
+	<td> {{b.author}}</td>
+	<td> {{b.collection}}</td>
+	<td> {{b.other}} </td>
+	<td> {{b.title}} </td>
+	<td> {{b.reader}} </td>
+	</tr>
+	
+ </table>
+ 
+</div>
+
+</body>
+</html>
