@@ -21,9 +21,13 @@ public class CarrinhoController extends Controller {
     public static Result addCarrinho(String email, Long productid) throws Exception {
     	CarrinhoDAO cDAO = new CarrinhoDAO();
     	Carrinho c = cDAO.findCarrinho(email);
+    	if(c==null)
+    		c = new Carrinho();
     	Produto p = new ProdutoDAO().findProduto(productid);
-    	c.addProduto(p);
-        cDAO.create(c);
+    	if(p!=null) {
+    		c.addProduto(p);
+    		cDAO.create(c);
+    	}	
     	return ok("ok");
     }
     
