@@ -71,12 +71,12 @@ function getCookie(cname) {
 }
 
 $.ajax({
-  url: 'http://129.41.137.70/lojaUnasp/loja/carrinho/list/	'+getCookie('user'),
+  url: 'http://129.41.137.70/Carrinho/	'+getCookie('user'),
   success: function(data){
      user = getCookie('user');
   	 
     for(i=0;i<data.length;i++){
-       data[i].cart = "<A HREF='../loja/carrinho/remove/" + user + "/" +  data[i].id + "'><img src='../images/remove.png'/></A>";
+       data[i].cart = "<A HREF='../Carrinho/remove/" + user + "/" +  data[i].id + "'><img src='../images/remove.png'/></A>";
        data[i].image = "<IMG WIDTH=60 HEIGHT=90 SRC='../foto/"  + data[i].foto + "' >";
        data[i].preco = "R$:" + data[i].preco; 
      }  
@@ -90,10 +90,10 @@ $.ajax({
 });
 
 $.ajax({
-  url: 'http://129.41.137.70/lojaUnasp/loja/carrinho/total/	'+getCookie('user'),
+  url: 'http://129.41.137.70/Carrinho/total/	'+getCookie('user'),
   success: function(data){
      user = getCookie('user');
-     total = "<A HREF='../loja/compra/add/" + getCookie('user') + "'>"
+     total = "<A HREF='../Compra/add/" + getCookie('user') + "'>"
      total +=  "<button type='button'>Fechar Pedido " + "Total: R$:" + data + "</button> "
      total += "</A>"
     $("#vtotal").html(total);
