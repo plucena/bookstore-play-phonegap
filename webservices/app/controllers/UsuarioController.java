@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import play.mvc.*;
 
-public class UsuarioController extends Controller {
+public class UsuarioController extends Application {
 
     public static Result getUsuarios() throws Exception {
     	JsonNode response = JsonObjectParser.Serialize(new UsuarioDAO().selectAll());

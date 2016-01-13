@@ -1,6 +1,6 @@
 // @SOURCE:/Users/percivalslucena/loja/webservices/conf/routes
 // @HASH:0a2b0e9da4fda74e66eb039aa3b5c96dc1f693ab
-// @DATE:Wed Jan 13 14:47:31 BRST 2016
+// @DATE:Wed Jan 13 18:07:24 BRST 2016
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._

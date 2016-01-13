@@ -9,10 +9,13 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.11.1"
 
+libraryDependencies += filters
+
 libraryDependencies ++= Seq(
   javaJdbc,
   javaEbean,
   cache,
   javaWs,
+  filters,
   "com.google.code.gson" %  "gson" % "2.2.4"
 )

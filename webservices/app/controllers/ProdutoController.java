@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import play.mvc.*;
 
 //@Api(value = "/produto", description = "Operations about Produtos")
-public class ProdutoController extends Controller {
+public class ProdutoController extends Application {
 
     
   //  @ApiOperation(nickname = "getProdutos", value = "List All Produtos", notes = "Returns  Produtos", response = classOf[models.vo.Produto], httpMethod = "GET")

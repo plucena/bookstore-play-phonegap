@@ -4,7 +4,7 @@
 		module="bookstore_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20160113152339"
+		publication="20160113180724"
 	>
 		<description>
 		BookStore
@@ -39,6 +39,7 @@
 		<dependency org="com.typesafe.play" name="play-test_2.11" rev="2.3.8" conf="test->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-docs_2.11" rev="2.3.8" conf="docs->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java_2.11" rev="2.3.8" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="filters-helpers_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ebean_2.11" rev="2.3.8" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.3.8" conf="compile->default(compile)"/>

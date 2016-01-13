@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import play.mvc.*;
 
-public class CarrinhoController extends Controller {
+public class CarrinhoController extends Application {
 
     
 
