@@ -3,6 +3,11 @@
 # ~~~~
 
 # Home page
+
+#GET     /api-docs               		controllers.ApiHelpController.getResources
+
+GET     /Carrinho/:email                controllers.CarrinhoController.getCarrinho(email: String)
+
 GET     /Produto/:id                    controllers.ProdutoController.getProduto(id: Long)
 GET     /Produto                        controllers.ProdutoController.getProdutos()
 POST    /Produto					    controllers.ProdutoController.saveProduto()

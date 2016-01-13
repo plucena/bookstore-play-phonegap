@@ -3,16 +3,6 @@
 
 # --- !Ups
 
-create table book (
-  id                        varchar(255) not null,
-  author                    varchar(255),
-  collection                varchar(255),
-  other                     varchar(255),
-  title                     varchar(255),
-  reader                    varchar(255),
-  constraint pk_book primary key (id))
-;
-
 create table carrinho (
   email                     varchar(255) not null,
   total                     float,
@@ -72,8 +62,6 @@ alter table COMPRA_PRODUTOS add constraint fk_COMPRA_PRODUTOS_produto_02 foreign
 # --- !Downs
 
 SET FOREIGN_KEY_CHECKS=0;
-
-drop table book;
 
 drop table carrinho;
 
