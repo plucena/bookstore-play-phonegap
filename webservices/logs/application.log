@@ -1,45 +1,55 @@
-2016-01-13 14:33:45,934 - [INFO] - from play in pool-4-thread-1 
+2016-01-13 14:47:23,911 - [INFO] - from play in pool-4-thread-3 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2016-01-13 14:34:09,001 - [ERROR] - from application in New I/O worker #1 
+2016-01-13 14:47:40,883 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6omf5kja6 - Internal server error, for (GET) [/Produto] ->
+! @6omf7eodi - Internal server error, for (GET) [/Carrinho/plucena@gmail.com] ->
 
-play.PlayExceptions$RoutesCompilationException: Compilation error[Missing parameter in call definition: id]
-	at play.PlaySourceGenerators$$anonfun$1.apply(PlaySourceGenerators.scala:24) ~[na:na]
-	at play.PlaySourceGenerators$$anonfun$1.apply(PlaySourceGenerators.scala:12) ~[na:na]
-	at play.PlaySettings$$anonfun$defaultSettings$29.apply(PlaySettings.scala:119) ~[na:na]
-	at play.PlaySettings$$anonfun$defaultSettings$29.apply(PlaySettings.scala:119) ~[na:na]
-	at scala.Function7$$anonfun$tupled$1.apply(Function7.scala:35) ~[scala-library-2.11.1.jar:na]
-	at scala.Function7$$anonfun$tupled$1.apply(Function7.scala:34) ~[scala-library-2.11.1.jar:na]
-	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library-2.11.1.jar:na]
-	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
-	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
-	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
-	at sbt.Execute.work(Execute.scala:244) ~[na:na]
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
-	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
-	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_65]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_65]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_65]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_65]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_65]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_65]
+play.PlayExceptions$CompilationException: Compilation error[error: cannot find symbol]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49) ~[na:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.taskFailureHandler(PlayReload.scala:44) ~[na:na]
+	at play.PlayReload$.compileFailure(PlayReload.scala:40) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.compile(PlayReload.scala:17) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.runsupport.Reloader.reload(Reloader.scala:295) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:122) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
 
-2016-01-13 14:34:09,091 - [WARN] - from play in New I/O worker #1 
+2016-01-13 14:47:41,021 - [WARN] - from play in New I/O worker #1 
 No application found at invoker init
 
-2016-01-13 14:34:38,981 - [INFO] - from play in play-internal-execution-context-1 
+2016-01-13 14:48:01,521 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:mysql://localhost:3306/books] bound to JNDI as bookDS
 
-2016-01-13 14:34:39,304 - [INFO] - from play in play-internal-execution-context-1 
+2016-01-13 14:48:01,879 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost:3306/books
 
-2016-01-13 14:34:39,924 - [INFO] - from play in play-internal-execution-context-1 
+2016-01-13 14:48:02,746 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2016-01-13 14:50:13,171 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:mysql://localhost:3306/books] bound to JNDI as bookDS
+
+2016-01-13 14:50:13,203 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/books
+
+2016-01-13 14:50:13,250 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 

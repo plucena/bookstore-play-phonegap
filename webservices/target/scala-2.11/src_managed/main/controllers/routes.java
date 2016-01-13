@@ -1,6 +1,6 @@
 // @SOURCE:/Users/percivalslucena/loja/webservices/conf/routes
-// @HASH:70332043391e284873755a27d96f1f5266424237
-// @DATE:Wed Jan 13 14:34:28 BRST 2016
+// @HASH:0a2b0e9da4fda74e66eb039aa3b5c96dc1f693ab
+// @DATE:Wed Jan 13 14:47:31 BRST 2016
 
 package controllers;
 

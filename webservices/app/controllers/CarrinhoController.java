@@ -18,10 +18,13 @@ public class CarrinhoController extends Controller {
         return ok(response);
     }
     
-    public static Result addToCart(String email, Long productid) throws Exception {
-    	JsonNode response = JsonObjectParser.Serialize(new UsuarioDAO().findUsuario(email));
-    	System.out.println(response);
-        return ok(response);
+    public static Result addCarrinho(String email, Long productid) throws Exception {
+    	CarrinhoDAO cDAO = new CarrinhoDAO();
+    	Carrinho c = cDAO.findCarrinho(email);
+    	Produto p = new ProdutoDAO().findProduto(productid);
+    	c.addProduto(p);
+        cDAO.create(c);
+    	return ok("ok");
     }
     
     public static Result removeFromCart(String email, Long productid) throws Exception {
