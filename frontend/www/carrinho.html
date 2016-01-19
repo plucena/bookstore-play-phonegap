@@ -75,32 +75,32 @@ $.ajax({
   success: function(data){
      user = getCookie('user');
   	 
-    for(i=0;i<data.length;i++){
-       data[i].cart = "<A HREF='../Carrinho/remove/" + user + "/" +  data[i].id + "'><img src='../images/remove.png'/></A>";
-       data[i].image = "<IMG WIDTH=60 HEIGHT=90 SRC='../foto/"  + data[i].foto + "' >";
-       data[i].preco = "R$:" + data[i].preco; 
+
+     total = "<A HREF='../Compra/add/" + getCookie('user') + "'>"
+     total +=  "<button type='button'>Fechar Pedido " + "Total: R$:" + data.total + "</button> "
+     total += "</A>"
+     $("#vtotal").html(total);
+ 
+    var prod_data = [];
+
+    for(i=0;i<data.produtos.length;i++){
+       var prod = {}; 
+       prod.nome = data.produtos[i].nome;
+       prod.preco = "R$:" + data.produtos[i].preco; 
+       prod.descricao = data.produtos[i].descricao; 
+       prod.image = "<IMG WIDTH=60 HEIGHT=90 SRC='./foto/"  + data.produtos[i].foto + "' >";
+       prod.cart = "<A HREF='../Carrinho/remove/" + user + "/" +  data.produtos[i].id + "'><img src='./images/remove.png'/></A>";
+       prod_data.push(prod);
      }  
-        
+    
+
     $('#my-table').dynatable({
       dataset: {
-        records: data
+        records: prod_data
       }
     });
   }
 });
-
-$.ajax({
-  url: 'http://129.41.137.70/Carrinho/total/	'+getCookie('user'),
-  success: function(data){
-     user = getCookie('user');
-     total = "<A HREF='../Compra/add/" + getCookie('user') + "'>"
-     total +=  "<button type='button'>Fechar Pedido " + "Total: R$:" + data + "</button> "
-     total += "</A>"
-    $("#vtotal").html(total);
-    
-  }
-});
-
 
 
 
