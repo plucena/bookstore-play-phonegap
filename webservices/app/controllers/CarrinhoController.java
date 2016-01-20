@@ -33,7 +33,7 @@ public class CarrinhoController extends Application {
     	return ok("ok");
     }
     
-    public static Result removeFromCart(String email, Long productid) throws Exception {
+    public static Result removeCarrinho(String email, Long productid) throws Exception {
     	CarrinhoDAO cDAO = new CarrinhoDAO();
     	Carrinho c = cDAO.findCarrinho(email);
     	ProdutoDAO pDAO = new ProdutoDAO();
