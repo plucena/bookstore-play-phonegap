@@ -89,7 +89,7 @@ $.ajax({
        prod.preco = "R$:" + data.produtos[i].preco; 
        prod.descricao = data.produtos[i].descricao; 
        prod.image = "<IMG WIDTH=60 HEIGHT=90 SRC='./foto/"  + data.produtos[i].foto + "' >";
-       prod.cart = "<A HREF='../Carrinho/remove/" + user + "/" +  data.produtos[i].id + "'><img src='./images/remove.png'/></A>";
+       prod.cart = "<A HREF='http://129.41.137.70/Carrinho/remove/" + user + "/" +  data.produtos[i].id + "'><img src='./images/remove.png'/></A>";
        prod_data.push(prod);
      }  
     

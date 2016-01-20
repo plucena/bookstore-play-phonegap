@@ -67,6 +67,13 @@ function getCookie(cname) {
     return "";
 }
 
+function addToCart(curl) {
+    $.ajax({url: curl, success: function(result){
+        alert("Produto adicionado");
+    }});
+  }  
+
+
 $.ajax({
   url: 'http://129.41.137.70/Produto',
   success: function(data){
@@ -85,7 +92,8 @@ $.ajax({
         }
         
     for(i=0;i<data.length;i++) {
-       data[i].cart = "<A HREF='http://129.41.137.70/Carrinho/add/" + user + "/" +  data[i].id + "'><img src='./images/cart.png'/></A>";
+       iid  =  "http://129.41.137.70/Carrinho/add/" + user + "/" +  data[i].id;
+       data[i].cart = "<img src='./images/cart.png' id='" + iid +  "' "  + "onclick='addToCart(this.id)' />";
        data[i].image = "<IMG WIDTH=60 HEIGHT=90 SRC='./foto/"  + data[i].foto + "' >";
        data[i].preco = "R$:" + data[i].preco; 
      }  
