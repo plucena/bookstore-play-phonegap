@@ -34,9 +34,19 @@ public class CarrinhoController extends Application {
     }
     
     public static Result removeFromCart(String email, Long productid) throws Exception {
-    	JsonNode response = JsonObjectParser.Serialize(new UsuarioDAO().findUsuario(email));
-    	System.out.println(response);
-        return ok(response);
+    	CarrinhoDAO cDAO = new CarrinhoDAO();
+    	Carrinho c = cDAO.findCarrinho(email);
+    	ProdutoDAO pDAO = new ProdutoDAO();
+    	Produto p = pDAO.findProduto(productid);
+    	if(p!=null) {
+    		for(Produto prod: c.getProdutos())
+    			if(prod.getId()==p.getId())
+    				 c.removeProduto(prod);
+    			
+    		cDAO.create(c);
+    	}	
+
+        return ok("ok");
     }
     
    
