@@ -80,4 +80,4 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
 </widget>
-<!-- From: file:/Users/percivalslucena/lojaapp/lojapp/platforms/android/res/xml/config.xml -->
+<!-- From: file:/Users/percivalslucena/loja/frontend/platforms/android/res/xml/config.xml -->

@@ -46,10 +46,14 @@ function getURLParameter(name) {
 }
 
 function setCookie(cname, cvalue, exdays) {
+   window.localStorage.setItem(cname, cvalue);
+
+  /*
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
+   */ 
 }
 
 function delete_cookie( name ) {
@@ -57,6 +61,9 @@ function delete_cookie( name ) {
 }
 
 function getCookie(cname) {
+    return window.localStorage.getItem(cname);
+
+    /*
     var name = cname + "=";
     var ca = document.cookie.split(';');
     for(var i=0; i<ca.length; i++) {
@@ -64,11 +71,18 @@ function getCookie(cname) {
         while (c.charAt(0)==' ') c = c.substring(1);
         if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
     }
-    return "";
+    return ""; */
 }
 
+function addToCart(curl) {
+    $.ajax({url: curl, success: function(result){
+        alert("Produto adicionado");
+    }});
+  }  
+
+
 $.ajax({
-  url: 'http://129.41.137.70/lojaUnasp/loja/produto/list',
+  url: 'http://129.41.137.70/Produto',
   success: function(data){
 
     uparam = getURLParameter('user'); 
@@ -85,7 +99,8 @@ $.ajax({
         }
         
     for(i=0;i<data.length;i++) {
-       data[i].cart = "<A HREF='http://129.41.137.70/loja/carrinho/add/" + user + "/" +  data[i].id + "'><img src='./images/cart.png'/></A>";
+       iid  =  "http://129.41.137.70/Carrinho/add/" + user + "/" +  data[i].id;
+       data[i].cart = "<img src='./images/cart.png' id='" + iid +  "' "  + "onclick='addToCart(this.id)' />";
        data[i].image = "<IMG WIDTH=60 HEIGHT=90 SRC='./foto/"  + data[i].foto + "' >";
        data[i].preco = "R$:" + data[i].preco; 
      }  
