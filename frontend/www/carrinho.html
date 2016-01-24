@@ -48,6 +48,9 @@
 </div>
 
 <script>
+var prod_data = [];
+
+
 function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
 }
@@ -70,6 +73,17 @@ function getCookie(cname) {
     return "";
 }
 
+function removeFromCart(el) {
+    iidd = el.id;
+    el.parentNode.parentNode.remove();
+    curl  =  "http://129.41.137.70/Carrinho/remove/" + user + "/" +  iidd;
+    
+
+    $.ajax({url: curl, success: function(result){
+        alert("Livro removido com sucesso");   
+    }});
+   }
+
 $.ajax({
   url: 'http://129.41.137.70/Carrinho/	'+getCookie('user'),
   success: function(data){
@@ -81,7 +95,6 @@ $.ajax({
      total += "</A>"
      $("#vtotal").html(total);
  
-    var prod_data = [];
 
     for(i=0;i<data.produtos.length;i++){
        var prod = {}; 
@@ -89,7 +102,10 @@ $.ajax({
        prod.preco = "R$:" + data.produtos[i].preco; 
        prod.descricao = data.produtos[i].descricao; 
        prod.image = "<IMG WIDTH=60 HEIGHT=90 SRC='./foto/"  + data.produtos[i].foto + "' >";
-       prod.cart = "<A HREF='http://129.41.137.70/Carrinho/remove/" + user + "/" +  data.produtos[i].id + "'><img src='./images/remove.png'/></A>";
+       iid = data.produtos[i].id;
+       prod.id=iid;
+       prod.cart = "<img src='./images/remove.png' id='" + iid +  "' "  + "onclick='removeFromCart(this)' />";
+       
        prod_data.push(prod);
      }  
     
@@ -98,7 +114,7 @@ $.ajax({
       dataset: {
         records: prod_data
       }
-    });
+     });
   }
 });
 
