@@ -33,3 +33,8 @@ libraryDependencies ++= Seq(
   filters,
   "com.google.code.gson" %  "gson" % "2.2.4"
 )
+
+val main = play.Project(appName, appVersion, appDependencies).settings(
+    //write test reports and to console
+    testOptions in Test += Tests.Argument("junitxml", "console")
+  )
