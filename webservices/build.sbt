@@ -4,8 +4,10 @@ version := "1.0-SNAPSHOT"
 
 
 
-
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
+
+testOptions += Tests.Argument(TestFrameworks.JUnit, "-v", "-q", "-a")
+
 
 scalaVersion := "2.11.1"
 
