@@ -1,3 +1,8 @@
+import com.typesafe.sbt.SbtNativePackager._
+import com.typesafe.sbt.packager.Keys._
+import NativePackagerKeys._
+import com.typesafe.sbt.packager.archetypes.ServerLoader.{SystemV, Upstart}
+
 name := """BookStore"""
 maintainer in Debian := "gdc <aaa@aaa.com>"
 packageSummary in Debian := "loja"
