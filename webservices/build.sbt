@@ -1,8 +1,8 @@
 name := """BookStore"""
-
 version := "1.0-SNAPSHOT"
-
-
+maintainer in Debian := "gdc <aaa@aaa.com>"
+packageSummary in Debian := "loja"
+packageDescription in Debian := "loja"
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
