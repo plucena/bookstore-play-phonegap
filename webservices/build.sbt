@@ -36,3 +36,4 @@ libraryDependencies ++= Seq(
   filters,
   "com.google.code.gson" %  "gson" % "2.2.4"
 )
+
