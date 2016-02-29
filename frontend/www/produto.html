@@ -99,7 +99,7 @@ $.ajax({
         }
         
     for(i=0;i<data.length;i++) {
-       iid  =  "http://129.41.137.70/Carrinho/add/" + user + "/" +  data[i].id;
+       iid  =  "http://129.41.137.70/Carrinho/add/" + user + "/" +  data[i]._id;
        data[i].cart = "<img src='./images/cart.png' id='" + iid +  "' "  + "onclick='addToCart(this.id)' />";
        data[i].image = "<IMG WIDTH=60 HEIGHT=90 SRC='./foto/"  + data[i].foto + "' >";
        data[i].preco = "R$:" + data[i].preco; 
