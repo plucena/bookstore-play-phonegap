@@ -82,7 +82,7 @@ function addToCart(curl) {
 
 
 $.ajax({
-  url: 'https://d7a497fa-eec2-4ca7-809d-c8215a3c12cc-bluemix.cloudant.com/produto/_design/q/_list/all/all',
+  url: 'http://129.41.137.70/Produto',
   success: function(data){
 
     uparam = getURLParameter('user'); 
@@ -99,7 +99,7 @@ $.ajax({
         }
         
     for(i=0;i<data.length;i++) {
-       iid  =  "http://129.41.137.70/Carrinho/add/" + user + "/" +  data[i]._id;
+       iid  =  "http://129.41.137.70/Carrinho/add/" + user + "/" +  data[i].id;
        data[i].cart = "<img src='./images/cart.png' id='" + iid +  "' "  + "onclick='addToCart(this.id)' />";
        data[i].image = "<IMG WIDTH=60 HEIGHT=90 SRC='./foto/"  + data[i].foto + "' >";
        data[i].preco = "R$:" + data[i].preco; 
