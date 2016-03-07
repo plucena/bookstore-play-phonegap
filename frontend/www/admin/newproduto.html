@@ -61,8 +61,8 @@ $(document).ready(function() {
   $("#newbookform").submit(function() {
 
     $.ajax({
-     type: "GET",
-      url: "../../loja/produto/list",
+     type: "POST,
+      url: "http://129.41.137.70/Produto/",
       data: $(this).serialize(),
       success: function() {
          alert("Produto Salvo");
