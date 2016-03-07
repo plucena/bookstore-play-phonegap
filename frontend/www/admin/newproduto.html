@@ -69,6 +69,7 @@
     alert(fdata);
     $.ajax({
      type: "POST",
+      contentType:"application/json; charset=utf-8",
       url: "http://129.41.137.70/Produto/", 
       data: fdata,
       success: function() {
