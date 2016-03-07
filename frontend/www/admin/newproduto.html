@@ -59,7 +59,13 @@
  <script>
 
   $("#newbookform").submit(function() {
-    fdata = JSON.stringify($("#newbookform").serializeArray());
+    prod = new Object();
+    prod.nome = $("#nome").value;
+    prod.descricao = $("#descricao").value;
+    prod.preco = $("#preco").value;
+    prod.foto =  $("#foto").value;
+    prod.arquivo = $("#arquivo").value;
+    fdata = JSON.stringify(prod);
     alert(fdata);
     $.ajax({
      type: "POST",
