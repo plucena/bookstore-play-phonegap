@@ -10,19 +10,19 @@ create table carrinho (
 ;
 
 create table compra (
-  COMPRA_ID                 bigint not null,
+  COMPRA_ID                 bigint auto_increment not null,
   status                    varchar(255),
-  data                      timestamp,
+  data                      datetime,
   usaurio                   varchar(255),
   total                     float,
   constraint pk_compra primary key (COMPRA_ID))
 ;
 
 create table produto (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   nome                      varchar(255),
   preco                     float,
-  DECRICAO                  clob(5000),
+  DECRICAO                  text,
   foto                      varchar(255),
   arquivo                   varchar(255),
   constraint pk_produto primary key (id))
@@ -48,14 +48,6 @@ create table COMPRA_PRODUTOS (
   produto_id                     bigint not null,
   constraint pk_COMPRA_PRODUTOS primary key (COMPRA_ID, produto_id))
 ;
-create sequence carrinho_seq;
-
-create sequence compra_seq;
-
-create sequence produto_seq;
-
-create sequence usuario_seq;
-
 
 
 
@@ -69,27 +61,19 @@ alter table COMPRA_PRODUTOS add constraint fk_COMPRA_PRODUTOS_produto_02 foreign
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists carrinho;
+drop table carrinho;
 
-drop table if exists CARRINHO_PRODUTO;
+drop table CARRINHO_PRODUTO;
 
-drop table if exists compra;
+drop table compra;
 
-drop table if exists COMPRA_PRODUTOS;
+drop table COMPRA_PRODUTOS;
 
-drop table if exists produto;
+drop table produto;
 
-drop table if exists usuario;
+drop table usuario;
 
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists carrinho_seq;
-
-drop sequence if exists compra_seq;
-
-drop sequence if exists produto_seq;
-
-drop sequence if exists usuario_seq;
+SET FOREIGN_KEY_CHECKS=1;
 
