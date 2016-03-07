@@ -28,7 +28,7 @@
 
 <h2>Novo Produto</h2>
 
-	<form id="newbookform" action="../../loja/produto/createform" method="GET">
+	<form id="newbookform">
         <div class="form-group">
         <label >nome</label>
         <input class="form-control" type="text" name='nome' id='nome' />
@@ -62,7 +62,7 @@ $(document).ready(function() {
 
     $.ajax({
      type: "POST,
-      url: "http://129.41.137.70/Produto/",
+      url: "http://129.41.137.70/Produto/", 
       data: $(this).serialize(),
       success: function() {
          alert("Produto Salvo");
