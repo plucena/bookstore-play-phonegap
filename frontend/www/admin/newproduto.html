@@ -74,9 +74,13 @@
       data: fdata,
       success: function() {
          alert("Produto Salvo");
-           window.location.replace("./produtos.html");
+         window.location.replace("./produtos.html");
          
-       }
+       },
+       error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+      }
     })
     })
 </script>
