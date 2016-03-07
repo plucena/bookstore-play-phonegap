@@ -59,11 +59,12 @@
  <script>
 $(document).ready(function() {
   $("#newbookform").submit(function() {
-
+    fdata = JSON.stringify($("#newbookform").serializeArray());
+    alert(fdata);
     $.ajax({
      type: "POST,
       url: "http://129.41.137.70/Produto/", 
-      data: $(this).serialize(),
+      data: fdata,
       success: function() {
          alert("Produto Salvo");
            window.location.replace("./produtos.html");
