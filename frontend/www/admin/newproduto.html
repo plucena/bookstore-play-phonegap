@@ -60,11 +60,11 @@
 
   $("#newbookform").submit(function() {
     prod = new Object();
-    prod.nome = $("#nome").value;
-    prod.descricao = $("#descricao").value;
-    prod.preco = $("#preco").value;
-    prod.foto =  $("#foto").value;
-    prod.arquivo = $("#arquivo").value;
+    prod.nome = $("#nome").val();
+    prod.descricao = $("#descricao").val();
+    prod.preco = $("#preco").val();
+    prod.foto =  $("#foto").val();
+    prod.arquivo = $("#arquivo").val();
     fdata = JSON.stringify(prod);
     alert(fdata);
     $.ajax({
