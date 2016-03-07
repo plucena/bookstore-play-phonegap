@@ -10,8 +10,7 @@ public class Application extends Controller {
   */
   public static Result preflight(String all) {
     response().setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
-    response().setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, Accept");
-    response().setHeader("Access-Control-Allow-Headers",  "X-Custom-Header");
+    response().setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, X-Custom-Header");
     return ok();
   }
 
