@@ -62,7 +62,7 @@
     fdata = JSON.stringify($("#newbookform").serializeArray());
     alert(fdata);
     $.ajax({
-     type: "POST,
+     type: "POST",
       url: "http://129.41.137.70/Produto/", 
       data: fdata,
       success: function() {
