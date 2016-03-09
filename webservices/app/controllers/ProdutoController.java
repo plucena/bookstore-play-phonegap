@@ -7,13 +7,17 @@ import model.vo.Produto;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import play.mvc.*;
+import com.wordnik.swagger.annotations.*;
 
-//@Api(value = "/produto", description = "Operations about Produtos")
+@Api(value = "/api/produto", description = "Operations with Produto") 
 public class ProdutoController extends Application {
 
     
-  //  @ApiOperation(nickname = "getProdutos", value = "List All Produtos", notes = "Returns  Produtos", response = classOf[models.vo.Produto], httpMethod = "GET")
-    public static Result getProdutos() throws Exception {
+	@ApiOperation(value = "get All Produto",
+		     notes = "Returns List of all Produtos",
+		     response = model.vo.Produto.class, 
+		     httpMethod = "GET")  
+     public static Result getProdutos() throws Exception {
     	JsonNode response = JsonObjectParser.Serialize(new ProdutoDAO().selectAll());
     	System.out.println(response);
         return ok(response);

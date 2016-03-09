@@ -1,6 +1,6 @@
 // @SOURCE:/Users/percivalslucena/loja/webservices/conf/routes
-// @HASH:5c213ac5a77c5e7740c6ef9c6dcd0ce5623a89da
-// @DATE:Wed Mar 09 17:09:19 BRT 2016
+// @HASH:779cf2da771102fffb3c59806c43b660d0e0d5e2
+// @DATE:Wed Mar 09 17:32:32 BRT 2016
 
 
 import play.core._
@@ -47,10 +47,10 @@ HandlerDef(this.getClass.getClassLoader, "", "controllers.ApiHelpController", "g
         
 
 // @LINE:13
-private[this] lazy val controllers_ApiHelpController_getResource2_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("api-docs/api/todos"))))
+private[this] lazy val controllers_ApiHelpController_getResource2_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("api-docs/api/produto"))))
 private[this] lazy val controllers_ApiHelpController_getResource2_invoker = createInvoker(
 controllers.ApiHelpController.getResource(fakeValue[String]),
-HandlerDef(this.getClass.getClassLoader, "", "controllers.ApiHelpController", "getResource", Seq(classOf[String]),"GET", """""", Routes.prefix + """api-docs/api/todos"""))
+HandlerDef(this.getClass.getClassLoader, "", "controllers.ApiHelpController", "getResource", Seq(classOf[String]),"GET", """""", Routes.prefix + """api-docs/api/produto"""))
         
 
 // @LINE:17
@@ -122,7 +122,7 @@ private[this] lazy val controllers_Assets_at12_invoker = createInvoker(
 controllers.Assets.at(fakeValue[String], fakeValue[String]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
         
-def documentation = List(("""GET""", prefix,"""controllers.Assets.at(path:String = "/public", file:String = "index.html")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """api-docs""","""controllers.ApiHelpController.getResources"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """api-docs/api/todos""","""controllers.ApiHelpController.getResource(path:String = "/api/todos")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Carrinho/$email<[^/]+>""","""controllers.CarrinhoController.getCarrinho(email:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Carrinho/add/$email<[^/]+>/$produto<[^/]+>""","""controllers.CarrinhoController.addCarrinho(email:String, produto:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Carrinho/remove/$email<[^/]+>/$produto<[^/]+>""","""controllers.CarrinhoController.removeCarrinho(email:String, produto:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Produto/$id<[^/]+>""","""controllers.ProdutoController.getProduto(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Produto""","""controllers.ProdutoController.getProdutos()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Produto""","""controllers.ProdutoController.saveProduto()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Usuario/$email<[^/]+>""","""controllers.UsuarioController.getUsuario(email:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Usuario""","""controllers.UsuarioController.getUsuarios()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Usuario""","""controllers.UsuarioController.saveUsuario()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+def documentation = List(("""GET""", prefix,"""controllers.Assets.at(path:String = "/public", file:String = "index.html")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """api-docs""","""controllers.ApiHelpController.getResources"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """api-docs/api/produto""","""controllers.ApiHelpController.getResource(path:String = "/api/produto")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Carrinho/$email<[^/]+>""","""controllers.CarrinhoController.getCarrinho(email:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Carrinho/add/$email<[^/]+>/$produto<[^/]+>""","""controllers.CarrinhoController.addCarrinho(email:String, produto:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Carrinho/remove/$email<[^/]+>/$produto<[^/]+>""","""controllers.CarrinhoController.removeCarrinho(email:String, produto:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Produto/$id<[^/]+>""","""controllers.ProdutoController.getProduto(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Produto""","""controllers.ProdutoController.getProdutos()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Produto""","""controllers.ProdutoController.saveProduto()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Usuario/$email<[^/]+>""","""controllers.UsuarioController.getUsuario(email:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Usuario""","""controllers.UsuarioController.getUsuarios()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """Usuario""","""controllers.UsuarioController.saveUsuario()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -148,7 +148,7 @@ case controllers_ApiHelpController_getResources1_route(params) => {
 
 // @LINE:13
 case controllers_ApiHelpController_getResource2_route(params) => {
-   call(Param[String]("path", Right("/api/todos"))) { (path) =>
+   call(Param[String]("path", Right("/api/produto"))) { (path) =>
         controllers_ApiHelpController_getResource2_invoker.call(controllers.ApiHelpController.getResource(path))
    }
 }

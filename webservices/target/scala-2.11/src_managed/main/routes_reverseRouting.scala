@@ -1,6 +1,6 @@
 // @SOURCE:/Users/percivalslucena/loja/webservices/conf/routes
-// @HASH:5c213ac5a77c5e7740c6ef9c6dcd0ce5623a89da
-// @DATE:Wed Mar 09 17:09:19 BRT 2016
+// @HASH:779cf2da771102fffb3c59806c43b660d0e0d5e2
+// @DATE:Wed Mar 09 17:32:32 BRT 2016
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -100,8 +100,8 @@ def getResources(): Call = {
 
 // @LINE:13
 def getResource(): Call = {
-   implicit val _rrc = new ReverseRouteContext(Map(("path", "/api/todos")))
-   Call("GET", _prefix + { _defaultPrefix } + "api-docs/api/todos")
+   implicit val _rrc = new ReverseRouteContext(Map(("path", "/api/produto")))
+   Call("GET", _prefix + { _defaultPrefix } + "api-docs/api/produto")
 }
                         
 
@@ -275,7 +275,7 @@ def getResource : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ApiHelpController.getResource",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api-docs/api/todos"})
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api-docs/api/produto"})
       }
    """
 )
@@ -441,7 +441,7 @@ def getResources(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 
 // @LINE:13
 def getResource(path:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.ApiHelpController.getResource(path), HandlerDef(this.getClass.getClassLoader, "", "controllers.ApiHelpController", "getResource", Seq(classOf[String]), "GET", """""", _prefix + """api-docs/api/todos""")
+   controllers.ApiHelpController.getResource(path), HandlerDef(this.getClass.getClassLoader, "", "controllers.ApiHelpController", "getResource", Seq(classOf[String]), "GET", """""", _prefix + """api-docs/api/produto""")
 )
                       
 

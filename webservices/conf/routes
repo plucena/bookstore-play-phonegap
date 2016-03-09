@@ -10,7 +10,7 @@ GET /api-docs controllers.ApiHelpController.getResources
 #POST /login controllers.SecurityController.login() 
 #POST /logout controllers.SecurityController.logout()
 
-GET /api-docs/api/todos controllers.ApiHelpController.getResource(path = "/api/todos") 
+GET /api-docs/api/produto controllers.ApiHelpController.getResource(path = "/api/produto") 
 
 #GET     /api-docs               		 controllers.ApiHelpController.getResources
 
