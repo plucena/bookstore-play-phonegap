@@ -1,6 +1,6 @@
 // @SOURCE:/Users/percivalslucena/loja/webservices/conf/routes
-// @HASH:571b5faf9692bb7d0c83ae409230f43e69a381a1
-// @DATE:Wed Feb 03 16:39:40 BRST 2016
+// @HASH:5c213ac5a77c5e7740c6ef9c6dcd0ce5623a89da
+// @DATE:Wed Mar 09 17:09:19 BRT 2016
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -15,69 +15,68 @@ import _root_.play.libs.F
 import Router.queryString
 
 
+// @LINE:32
+// @LINE:28
+// @LINE:27
+// @LINE:26
 // @LINE:24
-// @LINE:20
+// @LINE:23
+// @LINE:22
 // @LINE:19
 // @LINE:18
-// @LINE:16
-// @LINE:15
-// @LINE:14
-// @LINE:11
-// @LINE:10
-// @LINE:9
+// @LINE:17
+// @LINE:13
+// @LINE:8
+// @LINE:6
 package controllers {
 
-// @LINE:11
-// @LINE:10
-// @LINE:9
-class ReverseCarrinhoController {
+// @LINE:32
+// @LINE:6
+class ReverseAssets {
 
 
-// @LINE:9
-def getCarrinho(email:String): Call = {
-   import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "Carrinho/" + implicitly[PathBindable[String]].unbind("email", dynamicString(email)))
+// @LINE:32
+// @LINE:6
+def at(file:String): Call = {
+   (file: @unchecked) match {
+// @LINE:6
+case (file) if file == "index.html" =>
+  implicit val _rrc = new ReverseRouteContext(Map(("path", "/public"), ("file", "index.html")))
+  Call("GET", _prefix)
+                                         
+// @LINE:32
+case (file)  =>
+  implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
+  Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
+                                         
+   }
 }
-                        
-
-// @LINE:11
-def removeCarrinho(email:String, produto:Long): Call = {
-   import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "Carrinho/remove/" + implicitly[PathBindable[String]].unbind("email", dynamicString(email)) + "/" + implicitly[PathBindable[Long]].unbind("produto", produto))
-}
-                        
-
-// @LINE:10
-def addCarrinho(email:String, produto:Long): Call = {
-   import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "Carrinho/add/" + implicitly[PathBindable[String]].unbind("email", dynamicString(email)) + "/" + implicitly[PathBindable[Long]].unbind("produto", produto))
-}
-                        
+                                                
 
 }
                           
 
-// @LINE:16
-// @LINE:15
-// @LINE:14
+// @LINE:24
+// @LINE:23
+// @LINE:22
 class ReverseProdutoController {
 
 
-// @LINE:16
+// @LINE:24
 def saveProduto(): Call = {
    import ReverseRouteContext.empty
    Call("POST", _prefix + { _defaultPrefix } + "Produto")
 }
                         
 
-// @LINE:15
+// @LINE:23
 def getProdutos(): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "Produto")
 }
                         
 
-// @LINE:14
+// @LINE:22
 def getProduto(id:Long): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "Produto/" + implicitly[PathBindable[Long]].unbind("id", id))
@@ -87,41 +86,79 @@ def getProduto(id:Long): Call = {
 }
                           
 
-// @LINE:24
-class ReverseAssets {
+// @LINE:13
+// @LINE:8
+class ReverseApiHelpController {
 
 
-// @LINE:24
-def at(file:String): Call = {
-   implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
-   Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
+// @LINE:8
+def getResources(): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "api-docs")
+}
+                        
+
+// @LINE:13
+def getResource(): Call = {
+   implicit val _rrc = new ReverseRouteContext(Map(("path", "/api/todos")))
+   Call("GET", _prefix + { _defaultPrefix } + "api-docs/api/todos")
 }
                         
 
 }
                           
 
-// @LINE:20
 // @LINE:19
 // @LINE:18
+// @LINE:17
+class ReverseCarrinhoController {
+
+
+// @LINE:17
+def getCarrinho(email:String): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "Carrinho/" + implicitly[PathBindable[String]].unbind("email", dynamicString(email)))
+}
+                        
+
+// @LINE:19
+def removeCarrinho(email:String, produto:Long): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "Carrinho/remove/" + implicitly[PathBindable[String]].unbind("email", dynamicString(email)) + "/" + implicitly[PathBindable[Long]].unbind("produto", produto))
+}
+                        
+
+// @LINE:18
+def addCarrinho(email:String, produto:Long): Call = {
+   import ReverseRouteContext.empty
+   Call("GET", _prefix + { _defaultPrefix } + "Carrinho/add/" + implicitly[PathBindable[String]].unbind("email", dynamicString(email)) + "/" + implicitly[PathBindable[Long]].unbind("produto", produto))
+}
+                        
+
+}
+                          
+
+// @LINE:28
+// @LINE:27
+// @LINE:26
 class ReverseUsuarioController {
 
 
-// @LINE:20
+// @LINE:28
 def saveUsuario(): Call = {
    import ReverseRouteContext.empty
    Call("POST", _prefix + { _defaultPrefix } + "Usuario")
 }
                         
 
-// @LINE:18
+// @LINE:26
 def getUsuario(email:String): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "Usuario/" + implicitly[PathBindable[String]].unbind("email", dynamicString(email)))
 }
                         
 
-// @LINE:19
+// @LINE:27
 def getUsuarios(): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "Usuario")
@@ -134,53 +171,39 @@ def getUsuarios(): Call = {
                   
 
 
+// @LINE:32
+// @LINE:28
+// @LINE:27
+// @LINE:26
 // @LINE:24
-// @LINE:20
+// @LINE:23
+// @LINE:22
 // @LINE:19
 // @LINE:18
-// @LINE:16
-// @LINE:15
-// @LINE:14
-// @LINE:11
-// @LINE:10
-// @LINE:9
+// @LINE:17
+// @LINE:13
+// @LINE:8
+// @LINE:6
 package controllers.javascript {
 import ReverseRouteContext.empty
 
-// @LINE:11
-// @LINE:10
-// @LINE:9
-class ReverseCarrinhoController {
+// @LINE:32
+// @LINE:6
+class ReverseAssets {
 
 
-// @LINE:9
-def getCarrinho : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.CarrinhoController.getCarrinho",
+// @LINE:32
+// @LINE:6
+def at : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Assets.at",
    """
-      function(email) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Carrinho/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email))})
+      function(file) {
+      if (file == """ + implicitly[JavascriptLitteral[String]].to("index.html") + """) {
+      return _wA({method:"GET", url:"""" + _prefix + """"})
       }
-   """
-)
-                        
-
-// @LINE:11
-def removeCarrinho : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.CarrinhoController.removeCarrinho",
-   """
-      function(email,produto) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Carrinho/remove/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email)) + "/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("produto", produto)})
+      if (true) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("file", file)})
       }
-   """
-)
-                        
-
-// @LINE:10
-def addCarrinho : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.CarrinhoController.addCarrinho",
-   """
-      function(email,produto) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Carrinho/add/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email)) + "/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("produto", produto)})
       }
    """
 )
@@ -189,13 +212,13 @@ def addCarrinho : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:16
-// @LINE:15
-// @LINE:14
+// @LINE:24
+// @LINE:23
+// @LINE:22
 class ReverseProdutoController {
 
 
-// @LINE:16
+// @LINE:24
 def saveProduto : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ProdutoController.saveProduto",
    """
@@ -206,7 +229,7 @@ def saveProduto : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:15
+// @LINE:23
 def getProdutos : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ProdutoController.getProdutos",
    """
@@ -217,7 +240,7 @@ def getProdutos : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:14
+// @LINE:22
 def getProduto : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ProdutoController.getProduto",
    """
@@ -231,16 +254,28 @@ def getProduto : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:24
-class ReverseAssets {
+// @LINE:13
+// @LINE:8
+class ReverseApiHelpController {
 
 
-// @LINE:24
-def at : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Assets.at",
+// @LINE:8
+def getResources : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ApiHelpController.getResources",
    """
-      function(file) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("file", file)})
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api-docs"})
+      }
+   """
+)
+                        
+
+// @LINE:13
+def getResource : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ApiHelpController.getResource",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api-docs/api/todos"})
       }
    """
 )
@@ -249,13 +284,55 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:20
 // @LINE:19
 // @LINE:18
+// @LINE:17
+class ReverseCarrinhoController {
+
+
+// @LINE:17
+def getCarrinho : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.CarrinhoController.getCarrinho",
+   """
+      function(email) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Carrinho/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email))})
+      }
+   """
+)
+                        
+
+// @LINE:19
+def removeCarrinho : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.CarrinhoController.removeCarrinho",
+   """
+      function(email,produto) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Carrinho/remove/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email)) + "/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("produto", produto)})
+      }
+   """
+)
+                        
+
+// @LINE:18
+def addCarrinho : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.CarrinhoController.addCarrinho",
+   """
+      function(email,produto) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Carrinho/add/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email)) + "/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("produto", produto)})
+      }
+   """
+)
+                        
+
+}
+              
+
+// @LINE:28
+// @LINE:27
+// @LINE:26
 class ReverseUsuarioController {
 
 
-// @LINE:20
+// @LINE:28
 def saveUsuario : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.UsuarioController.saveUsuario",
    """
@@ -266,7 +343,7 @@ def saveUsuario : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:18
+// @LINE:26
 def getUsuario : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.UsuarioController.getUsuario",
    """
@@ -277,7 +354,7 @@ def getUsuario : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:19
+// @LINE:27
 def getUsuarios : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.UsuarioController.getUsuarios",
    """
@@ -294,65 +371,55 @@ def getUsuarios : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:32
+// @LINE:28
+// @LINE:27
+// @LINE:26
 // @LINE:24
-// @LINE:20
+// @LINE:23
+// @LINE:22
 // @LINE:19
 // @LINE:18
-// @LINE:16
-// @LINE:15
-// @LINE:14
-// @LINE:11
-// @LINE:10
-// @LINE:9
+// @LINE:17
+// @LINE:13
+// @LINE:8
+// @LINE:6
 package controllers.ref {
 
 
-// @LINE:11
-// @LINE:10
-// @LINE:9
-class ReverseCarrinhoController {
+// @LINE:32
+// @LINE:6
+class ReverseAssets {
 
 
-// @LINE:9
-def getCarrinho(email:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.CarrinhoController.getCarrinho(email), HandlerDef(this.getClass.getClassLoader, "", "controllers.CarrinhoController", "getCarrinho", Seq(classOf[String]), "GET", """""", _prefix + """Carrinho/$email<[^/]+>""")
-)
-                      
-
-// @LINE:11
-def removeCarrinho(email:String, produto:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.CarrinhoController.removeCarrinho(email, produto), HandlerDef(this.getClass.getClassLoader, "", "controllers.CarrinhoController", "removeCarrinho", Seq(classOf[String], classOf[Long]), "GET", """""", _prefix + """Carrinho/remove/$email<[^/]+>/$produto<[^/]+>""")
-)
-                      
-
-// @LINE:10
-def addCarrinho(email:String, produto:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.CarrinhoController.addCarrinho(email, produto), HandlerDef(this.getClass.getClassLoader, "", "controllers.CarrinhoController", "addCarrinho", Seq(classOf[String], classOf[Long]), "GET", """""", _prefix + """Carrinho/add/$email<[^/]+>/$produto<[^/]+>""")
+// @LINE:6
+def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Assets.at(path, file), HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Home page""", _prefix + """""")
 )
                       
 
 }
                           
 
-// @LINE:16
-// @LINE:15
-// @LINE:14
+// @LINE:24
+// @LINE:23
+// @LINE:22
 class ReverseProdutoController {
 
 
-// @LINE:16
+// @LINE:24
 def saveProduto(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ProdutoController.saveProduto(), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProdutoController", "saveProduto", Seq(), "POST", """""", _prefix + """Produto""")
 )
                       
 
-// @LINE:15
+// @LINE:23
 def getProdutos(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ProdutoController.getProdutos(), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProdutoController", "getProdutos", Seq(), "GET", """""", _prefix + """Produto""")
 )
                       
 
-// @LINE:14
+// @LINE:22
 def getProduto(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ProdutoController.getProduto(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.ProdutoController", "getProduto", Seq(classOf[Long]), "GET", """""", _prefix + """Produto/$id<[^/]+>""")
 )
@@ -361,38 +428,72 @@ def getProduto(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRe
 }
                           
 
-// @LINE:24
-class ReverseAssets {
+// @LINE:13
+// @LINE:8
+class ReverseApiHelpController {
 
 
-// @LINE:24
-def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Assets.at(path, file), HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
+// @LINE:8
+def getResources(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ApiHelpController.getResources(), HandlerDef(this.getClass.getClassLoader, "", "controllers.ApiHelpController", "getResources", Seq(), "GET", """""", _prefix + """api-docs""")
+)
+                      
+
+// @LINE:13
+def getResource(path:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ApiHelpController.getResource(path), HandlerDef(this.getClass.getClassLoader, "", "controllers.ApiHelpController", "getResource", Seq(classOf[String]), "GET", """""", _prefix + """api-docs/api/todos""")
 )
                       
 
 }
                           
 
-// @LINE:20
 // @LINE:19
 // @LINE:18
+// @LINE:17
+class ReverseCarrinhoController {
+
+
+// @LINE:17
+def getCarrinho(email:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.CarrinhoController.getCarrinho(email), HandlerDef(this.getClass.getClassLoader, "", "controllers.CarrinhoController", "getCarrinho", Seq(classOf[String]), "GET", """""", _prefix + """Carrinho/$email<[^/]+>""")
+)
+                      
+
+// @LINE:19
+def removeCarrinho(email:String, produto:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.CarrinhoController.removeCarrinho(email, produto), HandlerDef(this.getClass.getClassLoader, "", "controllers.CarrinhoController", "removeCarrinho", Seq(classOf[String], classOf[Long]), "GET", """""", _prefix + """Carrinho/remove/$email<[^/]+>/$produto<[^/]+>""")
+)
+                      
+
+// @LINE:18
+def addCarrinho(email:String, produto:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.CarrinhoController.addCarrinho(email, produto), HandlerDef(this.getClass.getClassLoader, "", "controllers.CarrinhoController", "addCarrinho", Seq(classOf[String], classOf[Long]), "GET", """""", _prefix + """Carrinho/add/$email<[^/]+>/$produto<[^/]+>""")
+)
+                      
+
+}
+                          
+
+// @LINE:28
+// @LINE:27
+// @LINE:26
 class ReverseUsuarioController {
 
 
-// @LINE:20
+// @LINE:28
 def saveUsuario(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.UsuarioController.saveUsuario(), HandlerDef(this.getClass.getClassLoader, "", "controllers.UsuarioController", "saveUsuario", Seq(), "POST", """""", _prefix + """Usuario""")
 )
                       
 
-// @LINE:18
+// @LINE:26
 def getUsuario(email:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.UsuarioController.getUsuario(email), HandlerDef(this.getClass.getClassLoader, "", "controllers.UsuarioController", "getUsuario", Seq(classOf[String]), "GET", """""", _prefix + """Usuario/$email<[^/]+>""")
 )
                       
 
-// @LINE:19
+// @LINE:27
 def getUsuarios(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.UsuarioController.getUsuarios(), HandlerDef(this.getClass.getClassLoader, "", "controllers.UsuarioController", "getUsuarios", Seq(), "GET", """""", _prefix + """Usuario""")
 )

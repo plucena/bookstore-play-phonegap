@@ -1,21 +1,371 @@
-2016-02-29 17:04:24,430 - [INFO] - from play in pool-4-thread-3 
+2016-03-09 17:06:49,036 - [INFO] - from play in pool-4-thread-1 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2016-02-29 17:04:32,626 - [INFO] - from play in play-internal-execution-context-1 
+2016-03-09 17:07:32,148 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6pc7dhhdk - Internal server error, for (GET) [/assets/lib/swagger-ui/index.html?/url=http://localhost:9000/api-docs] ->
+
+play.PlayExceptions$CompilationException: Compilation error[object SecurityController is not a member of package controllers]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49) ~[na:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.taskFailureHandler(PlayReload.scala:44) ~[na:na]
+	at play.PlayReload$.compileFailure(PlayReload.scala:40) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.compile(PlayReload.scala:17) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.runsupport.Reloader.reload(Reloader.scala:295) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:122) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+
+2016-03-09 17:07:32,257 - [WARN] - from play in New I/O worker #1 
+No application found at invoker init
+
+2016-03-09 17:07:46,828 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6pc7did71 - Internal server error, for (GET) [/assets/lib/swagger-ui/index.html] ->
+
+play.PlayExceptions$CompilationException: Compilation error[object SecurityController is not a member of package controllers]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49) ~[na:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.taskFailureHandler(PlayReload.scala:44) ~[na:na]
+	at play.PlayReload$.compileFailure(PlayReload.scala:40) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.compile(PlayReload.scala:17) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.runsupport.Reloader.reload(Reloader.scala:295) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:122) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+
+2016-03-09 17:08:06,900 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6pc7djgp0 - Internal server error, for (GET) [/Produto] ->
+
+play.PlayExceptions$CompilationException: Compilation error[object SecurityController is not a member of package controllers]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49) ~[na:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.taskFailureHandler(PlayReload.scala:44) ~[na:na]
+	at play.PlayReload$.compileFailure(PlayReload.scala:40) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.compile(PlayReload.scala:17) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.runsupport.Reloader.reload(Reloader.scala:295) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:122) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+
+2016-03-09 17:08:31,588 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6pc7dl1cf - Internal server error, for (GET) [/Produto] ->
+
+play.PlayExceptions$CompilationException: Compilation error[object SecurityController is not a member of package controllers]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49) ~[na:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.taskFailureHandler(PlayReload.scala:44) ~[na:na]
+	at play.PlayReload$.compileFailure(PlayReload.scala:40) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.compile(PlayReload.scala:17) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.runsupport.Reloader.reload(Reloader.scala:295) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:122) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+
+2016-03-09 17:08:58,530 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6pc7dmf8k - Internal server error, for (GET) [/Produto] ->
+
+play.PlayExceptions$CompilationException: Compilation error[object SecurityController is not a member of package controllers]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at play.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49) ~[na:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.taskFailureHandler(PlayReload.scala:44) ~[na:na]
+	at play.PlayReload$.compileFailure(PlayReload.scala:40) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.compile(PlayReload.scala:17) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.runsupport.Reloader.reload(Reloader.scala:295) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:122) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+
+2016-03-09 17:09:28,683 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6pc7do7o7 - Internal server error, for (GET) [/Produto] ->
+
+play.PlayExceptions$UnexpectedException: Unexpected exception[Parse: conf/application.conf: 25: Expecting end of input or a comma, got '=' (if you intended '=' to be part of the value for 'api.version', try enclosing the value in double quotes, or you may be able to rename the file .properties rather than .conf)]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:51) ~[na:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.taskFailureHandler(PlayReload.scala:44) ~[na:na]
+	at play.PlayReload$.compileFailure(PlayReload.scala:40) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.compile(PlayReload.scala:17) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.runsupport.Reloader.reload(Reloader.scala:295) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:122) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+Caused by: com.typesafe.config.ConfigException$Parse: conf/application.conf: 25: Expecting end of input or a comma, got '=' (if you intended '=' to be part of the value for 'api.version', try enclosing the value in double quotes, or you may be able to rename the file .properties rather than .conf)
+	at com.typesafe.config.impl.Parser$ParseContext.parseError(Parser.java:435) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser$ParseContext.parseError(Parser.java:431) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser$ParseContext.parseObject(Parser.java:887) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser$ParseContext.parse(Parser.java:993) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser.parse(Parser.java:34) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.rawParseValue(Parseable.java:222) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.rawParseValue(Parseable.java:210) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.parseValue(Parseable.java:176) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.parseValue(Parseable.java:170) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.parse(Parseable.java:148) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.SimpleIncluder.fromBasename(SimpleIncluder.java:172) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.ConfigImpl.parseFileAnySyntax(ConfigImpl.java:134) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.ConfigFactory.parseFileAnySyntax(ConfigFactory.java:637) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.ConfigFactory.parseFileAnySyntax(ConfigFactory.java:641) ~[config-1.2.1.jar:na]
+	at play.PlayCommands$$anonfun$PostCompile$1$$anonfun$13.apply(PlayCommands.scala:135) ~[na:na]
+	at play.PlayCommands$$anonfun$PostCompile$1$$anonfun$13.apply(PlayCommands.scala:135) ~[na:na]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library-2.11.1.jar:na]
+	at play.PlayCommands$$anonfun$PostCompile$1.apply(PlayCommands.scala:135) ~[na:na]
+	at play.PlayCommands$$anonfun$PostCompile$1.apply(PlayCommands.scala:75) ~[na:na]
+	at scala.Function8$$anonfun$tupled$1.apply(Function8.scala:35) ~[scala-library-2.11.1.jar:na]
+	at scala.Function8$$anonfun$tupled$1.apply(Function8.scala:34) ~[scala-library-2.11.1.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library-2.11.1.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_65]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_65]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_65]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_65]
+
+2016-03-09 17:20:44,750 - [ERROR] - from application in New I/O worker #8 
+
+
+! @6pc7fak0p - Internal server error, for (GET) [/Produto] ->
+
+play.PlayExceptions$UnexpectedException: Unexpected exception[Parse: conf/application.conf: 25: Expecting end of input or a comma, got '=' (if you intended '=' to be part of the value for 'api.version', try enclosing the value in double quotes, or you may be able to rename the file .properties rather than .conf)]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:51) ~[na:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.taskFailureHandler(PlayReload.scala:44) ~[na:na]
+	at play.PlayReload$.compileFailure(PlayReload.scala:40) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.compile(PlayReload.scala:17) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.runsupport.Reloader.reload(Reloader.scala:295) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:122) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+Caused by: com.typesafe.config.ConfigException$Parse: conf/application.conf: 25: Expecting end of input or a comma, got '=' (if you intended '=' to be part of the value for 'api.version', try enclosing the value in double quotes, or you may be able to rename the file .properties rather than .conf)
+	at com.typesafe.config.impl.Parser$ParseContext.parseError(Parser.java:435) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser$ParseContext.parseError(Parser.java:431) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser$ParseContext.parseObject(Parser.java:887) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser$ParseContext.parse(Parser.java:993) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser.parse(Parser.java:34) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.rawParseValue(Parseable.java:222) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.rawParseValue(Parseable.java:210) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.parseValue(Parseable.java:176) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.parseValue(Parseable.java:170) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.parse(Parseable.java:148) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.SimpleIncluder.fromBasename(SimpleIncluder.java:172) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.ConfigImpl.parseFileAnySyntax(ConfigImpl.java:134) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.ConfigFactory.parseFileAnySyntax(ConfigFactory.java:637) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.ConfigFactory.parseFileAnySyntax(ConfigFactory.java:641) ~[config-1.2.1.jar:na]
+	at play.PlayCommands$$anonfun$PostCompile$1$$anonfun$13.apply(PlayCommands.scala:135) ~[na:na]
+	at play.PlayCommands$$anonfun$PostCompile$1$$anonfun$13.apply(PlayCommands.scala:135) ~[na:na]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library-2.11.1.jar:na]
+	at play.PlayCommands$$anonfun$PostCompile$1.apply(PlayCommands.scala:135) ~[na:na]
+	at play.PlayCommands$$anonfun$PostCompile$1.apply(PlayCommands.scala:75) ~[na:na]
+	at scala.Function8$$anonfun$tupled$1.apply(Function8.scala:35) ~[scala-library-2.11.1.jar:na]
+	at scala.Function8$$anonfun$tupled$1.apply(Function8.scala:34) ~[scala-library-2.11.1.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library-2.11.1.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_65]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_65]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_65]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_65]
+
+2016-03-09 17:21:16,360 - [ERROR] - from application in New I/O worker #8 
+
+
+! @6pc7fcekj - Internal server error, for (GET) [/Produto] ->
+
+play.PlayExceptions$UnexpectedException: Unexpected exception[Parse: conf/application.conf: 25: Expecting end of input or a comma, got '=' (if you intended '=' to be part of the value for 'api.version', try enclosing the value in double quotes, or you may be able to rename the file .properties rather than .conf)]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:51) ~[na:na]
+	at play.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.taskFailureHandler(PlayReload.scala:44) ~[na:na]
+	at play.PlayReload$.compileFailure(PlayReload.scala:40) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at play.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.11.1.jar:na]
+	at play.PlayReload$.compile(PlayReload.scala:17) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61) ~[na:na]
+	at play.runsupport.Reloader.reload(Reloader.scala:295) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:122) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+Caused by: com.typesafe.config.ConfigException$Parse: conf/application.conf: 25: Expecting end of input or a comma, got '=' (if you intended '=' to be part of the value for 'api.version', try enclosing the value in double quotes, or you may be able to rename the file .properties rather than .conf)
+	at com.typesafe.config.impl.Parser$ParseContext.parseError(Parser.java:435) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser$ParseContext.parseError(Parser.java:431) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser$ParseContext.parseObject(Parser.java:887) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser$ParseContext.parse(Parser.java:993) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parser.parse(Parser.java:34) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.rawParseValue(Parseable.java:222) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.rawParseValue(Parseable.java:210) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.parseValue(Parseable.java:176) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.parseValue(Parseable.java:170) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.Parseable.parse(Parseable.java:148) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.SimpleIncluder.fromBasename(SimpleIncluder.java:172) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.impl.ConfigImpl.parseFileAnySyntax(ConfigImpl.java:134) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.ConfigFactory.parseFileAnySyntax(ConfigFactory.java:637) ~[config-1.2.1.jar:na]
+	at com.typesafe.config.ConfigFactory.parseFileAnySyntax(ConfigFactory.java:641) ~[config-1.2.1.jar:na]
+	at play.PlayCommands$$anonfun$PostCompile$1$$anonfun$13.apply(PlayCommands.scala:135) ~[na:na]
+	at play.PlayCommands$$anonfun$PostCompile$1$$anonfun$13.apply(PlayCommands.scala:135) ~[na:na]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library-2.11.1.jar:na]
+	at play.PlayCommands$$anonfun$PostCompile$1.apply(PlayCommands.scala:135) ~[na:na]
+	at play.PlayCommands$$anonfun$PostCompile$1.apply(PlayCommands.scala:75) ~[na:na]
+	at scala.Function8$$anonfun$tupled$1.apply(Function8.scala:35) ~[scala-library-2.11.1.jar:na]
+	at scala.Function8$$anonfun$tupled$1.apply(Function8.scala:34) ~[scala-library-2.11.1.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library-2.11.1.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_65]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_65]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_65]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_65]
+
+2016-03-09 17:21:47,671 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:mysql://localhost:3306/books] bound to JNDI as bookDS
 
-2016-02-29 17:04:33,017 - [INFO] - from play in play-internal-execution-context-1 
+2016-03-09 17:21:48,539 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost:3306/books
 
-2016-02-29 17:04:33,660 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2016-02-29 17:04:34,799 - [INFO] - from play in play-internal-execution-context-1 
-datasource [jdbc:mysql://localhost:3306/books] bound to JNDI as bookDS
-
-2016-02-29 17:04:34,840 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:mysql://localhost:3306/books
-
-2016-02-29 17:04:34,881 - [INFO] - from play in play-internal-execution-context-1 
+2016-03-09 17:21:49,357 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
