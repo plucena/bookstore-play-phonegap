@@ -25,7 +25,7 @@ public class CarrinhoController extends Application {
             paramType = "user", 
             value = "" 
        ) 
-    public static Result getCarrinho(String email) throws Exception {
+    public static Result getCarrinho(@ApiParam(value = "email") String email) throws Exception {
     	JsonNode response = JsonObjectParser.Serialize(new CarrinhoDAO().findCarrinho(email));
     	System.out.println(response);
         return ok(response);
