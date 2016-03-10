@@ -11,6 +11,7 @@ GET /api-docs controllers.ApiHelpController.getResources
 #POST /logout controllers.SecurityController.logout()
 
 GET /api-docs/api/produto controllers.ApiHelpController.getResource(path = "/api/produto") 
+GET /api-docs/api/carrinho controllers.ApiHelpController.getResource(path = "/api/carrinho") 
 
 #GET     /api-docs               		 controllers.ApiHelpController.getResources
 
