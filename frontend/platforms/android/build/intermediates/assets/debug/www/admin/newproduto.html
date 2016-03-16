@@ -28,7 +28,7 @@
 
 <h2>Novo Produto</h2>
 
-	<form id="newbookform" action="../../loja/produto/createform" method="GET">
+	<form id="newbookform">
         <div class="form-group">
         <label >nome</label>
         <input class="form-control" type="text" name='nome' id='nome' />
@@ -57,22 +57,32 @@
       </form>
     
  <script>
-$(document).ready(function() {
-  $("#newbookform").submit(function() {
 
+  $("#newbookform").submit(function() {
+    prod = new Object();
+    prod.nome = $("#nome").val();
+    prod.descricao = $("#descricao").val();
+    prod.preco = $("#preco").val();
+    prod.foto =  $("#foto").val();
+    prod.arquivo = $("#arquivo").val();
+    fdata = JSON.stringify(prod);
+    alert(fdata);
     $.ajax({
-     type: "GET",
-      url: "../../loja/produto/list",
-      data: $(this).serialize(),
+     type: "POST",
+      contentType:"application/json; charset=utf-8",
+      url: "http://129.41.137.70/Produto/", 
+      data: fdata,
       success: function() {
          alert("Produto Salvo");
-           window.location.replace("./produtos.html");
+         window.location.replace("./produtos.html");
          
-       }
+       },
+       error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+      }
     })
-
-  })
-})
+    })
 </script>
     
 </body>
