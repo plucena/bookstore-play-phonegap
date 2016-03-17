@@ -88,7 +88,7 @@ function getCookie(cname) {
 function removeFromCart(el) {
     iidd = el.id;
     el.parentNode.parentNode.remove();
-    curl  =  "http://129.41.137.70/Carrinho/remove/" + user + "/" +  iidd;
+    curl  =  "http://129.41.155.182/Carrinho/remove/" + user + "/" +  iidd;
     
 
     $.ajax({url: curl, success: function(result){
@@ -97,7 +97,7 @@ function removeFromCart(el) {
    }
 
 $.ajax({
-  url: 'http://129.41.137.70/Carrinho/	'+getCookie('user'),
+  url: 'http://129.41.155.182/Carrinho/	'+getCookie('user'),
   success: function(data){
      user = getCookie('user');
   	 
