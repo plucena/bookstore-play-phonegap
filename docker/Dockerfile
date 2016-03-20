@@ -33,4 +33,4 @@ RUN find /opt | grep bookstore-1.0
 RUN dpkg -i /opt/loja/webservices/target/BookStore_1.0-SNAPSHOT_all.deb
 
 
-CMD ["mysqld"]
+CMD ["mysqld", "/usr/share/bookstore/bin/bookstore"]
