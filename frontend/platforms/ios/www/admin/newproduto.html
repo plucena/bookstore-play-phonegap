@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link href="../../css/main.css" rel="stylesheet" media="screen">
+<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script src="../../js/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="../../js/jquery/jquery.serializejson.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-default">
+        <div>                
+        <a class="navbar-brand" href="login.html"> Loja Admin</a>
+        <a class="navbar-brand" href="newproduto.html"> Novo Produto</a>
+ 		<a class="navbar-brand" href="newusuario.html"> Novo Usuário</a>
+        <a class="navbar-brand" href="produtos.html"> Listar Produtos</a>
+        <a class="navbar-brand" href="usuarios.html"> Listar Usuários</a>
+        <a class="navbar-brand" href="compras.html"> Listar Compras</a>
+        </div>
+   </nav>
+
+
+<h2>Novo Produto</h2>
+
+	<form id="newbookform">
+        <div class="form-group">
+        <label >nome</label>
+        <input class="form-control" type="text" name='nome' id='nome' />
+        </div>
+        <div class="form-group">
+        <label >descrição</label>
+        <input class="form-control" type="text" name='descricao' id='descricao'/> 
+        </div>
+        <div class="form-group">
+        <label >preco</label>
+        <input class="form-control" type="text" name='preco' id='preco' />
+        </div>
+        <div class="form-group">
+        <label >foto</label>
+        <input class="form-control" type="text" name='foto' id='foto' />
+        </div>
+        <div>
+        <label >arquivo</label>  
+        <input class="form-control" type="text" name='arquivo' id='arquivo' />
+        </div>
+        
+  		<div class="form-group">
+  		<button type="submit">Adicionar</button>
+
+  		</div>
+      </form>
+    
+ <script>
+
+  $("#newbookform").submit(function() {
+    prod = new Object();
+    prod.nome = $("#nome").val();
+    prod.descricao = $("#descricao").val();
+    prod.preco = $("#preco").val();
+    prod.foto =  $("#foto").val();
+    prod.arquivo = $("#arquivo").val();
+    fdata = JSON.stringify(prod);
+    alert(fdata);
+    $.ajax({
+     type: "POST",
+      contentType:"application/json; charset=utf-8",
+      url: "http://129.41.137.70/Produto/", 
+      data: fdata,
+      success: function() {
+         alert("Produto Salvo");
+         window.location.replace("./produtos.html");
+         
+       },
+       error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+      }
+    })
+    })
+</script>
+    
+</body>
+</html>

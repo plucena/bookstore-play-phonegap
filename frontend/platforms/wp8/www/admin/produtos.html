@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><title>Insert title here</title>
+</head>
+<body>
+
+   
+<script src="../../js/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="../../js/jquery/jquery.dynatable.js" type="text/javascript"></script>
+<link href="../../css/jquery.dynatable.css" rel="stylesheet" media="screen">
+<link href="../../css/main.css" rel="stylesheet" media="screen">
+<link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
+<nav class="navbar navbar-default">
+        <div>                
+        <a class="navbar-brand" href="login.html"> Loja Admin</a>
+        <a class="navbar-brand" href="newproduto.html"> Novo Produto</a>
+        <a class="navbar-brand" href="newusuario.html"> Novo Usuário</a>
+        <a class="navbar-brand" href="produtos.html"> Listar Produtos</a>
+        <a class="navbar-brand" href="usuarios.html"> Listar Usuários</a>
+        <a class="navbar-brand" href="compras.html"> Listar Compras</a>
+        </div>
+   </nav>
+
+
+<div>
+<table id="my-table" class="table table-condensed">
+  <thead>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>Descricao</th>
+    <th>Preco</th>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+
+<script>
+$.ajax({
+  url: 'http://129.41.137.70/Produto',
+  success: function(data){
+    $('#my-table').dynatable({
+      dataset: {
+        records: data
+      }
+    });
+  }
+});
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><title>Insert title here</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+        <div> 
+        <ul class="nav navbar-nav">  
+        <li><a class="navbar-brand" href="#"> Unasp Store</a></li>
+        <li ><a class="navbar-brand" href="produto.html">Produtos</a></li>
+        <li class="active"><a class="navbar-brand" href="carrinho.html"> Carrinho</a></li>
+        <li><a class="navbar-brand" href="compras.html"> Meus Pedidos</a></li>
+        </ul>
+        </div>
+   </nav>
+
+
+
+   
+<script src="./js/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="./js/jquery/jquery.dynatable.js" type="text/javascript"></script>
+<link href="./css/jquery.dynatable.css" rel="stylesheet" media="screen">
+<link href="./css/main.css" rel="stylesheet" media="screen">
+<link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
+<div>
+<table id="my-table" class="table table-condensed">
+  <thead>
+    <th>Image</th>
+    <th>Nome</th>
+    <th>Descricao</th>
+    <th>Preco</th>
+    <th>Cart</th>
+
+    
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<BR/>
+<div id="vtotal" name="vtotal"></div>
+
+</div>
+
+<script>
+var prod_data = [];
+
+
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+}
+
+
+function setCookie(cname, cvalue, exdays) {
+   window.localStorage.setItem(cname, cvalue);
+
+  /*
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+   */ 
+}
+
+function delete_cookie( name ) {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+function getCookie(cname) {
+    return window.localStorage.getItem(cname);
+
+    /*
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return ""; */
+}
+
+function removeFromCart(el) {
+    iidd = el.id;
+    el.parentNode.parentNode.remove();
+    curl  =  "http://129.41.155.182/Carrinho/remove/" + user + "/" +  iidd;
+    
+
+    $.ajax({url: curl, success: function(result){
+        alert("Livro removido com sucesso");   
+    }});
+   }
+
+$.ajax({
+  url: 'http://129.41.155.182/Carrinho/	'+getCookie('user'),
+  success: function(data){
+     user = getCookie('user');
+  	 
+
+     total = "<A HREF='../Compra/add/" + getCookie('user') + "'>"
+     total +=  "<button type='button'>Fechar Pedido " + "Total: R$:" + data.total + "</button> "
+     total += "</A>"
+     $("#vtotal").html(total);
+ 
+
+    for(i=0;i<data.produtos.length;i++){
+       var prod = {}; 
+       prod.nome = data.produtos[i].nome;
+       prod.preco = "R$:" + data.produtos[i].preco; 
+       prod.descricao = data.produtos[i].descricao; 
+       prod.image = "<IMG WIDTH=60 HEIGHT=90 SRC='./foto/"  + data.produtos[i].foto + "' >";
+       iid = data.produtos[i].id;
+       prod.id=iid;
+       prod.cart = "<img src='./images/remove.png' id='" + iid +  "' "  + "onclick='removeFromCart(this)' />";
+       
+       prod_data.push(prod);
+     }  
+    
+
+    $('#my-table').dynatable({
+      dataset: {
+        records: prod_data
+      }
+     });
+  }
+});
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<script src="../../js/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
+
+
+<script>
+
+    prod = new Object();
+    prod.nome = "Ajax"
+    prod.descricao = "Deadpool";
+    prod.preco = 50;
+    prod.foto =  "1.jpg";
+    prod.arquivo = "2.pdf";
+    fdata = JSON.stringify(prod);
+    console.log(fdata);
+    $.ajax({
+     type: "POST",
+      contentType:"application/json; charset=utf-8",
+      url: "http://129.41.137.70/Produto/", 
+      data: fdata,
+      success: function() {
+         alert("Produto Salvo");
+         window.location.replace("./produtos.html");
+         
+       },
+       error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+      }
+    })
+</script>
+ 
