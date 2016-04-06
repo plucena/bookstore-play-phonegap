@@ -1,6 +1,8 @@
 Generate DEB
 activator dist debian:packageBin
 
-
 Run Daemon
 activator start -Dhttp.port=80
+
+Swagger
+http://petstore.swagger.io/?url=http://129.41.155.182/api-docs
