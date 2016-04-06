@@ -1,4 +1,6 @@
-This is your new Play application
-=================================
+Generate DEB
+activator dist debian:packageBin
 
-This file will be packaged with your application, when using `activator dist`.
+
+Run Daemon
+activator start -Dhttp.port=80
